@@ -33,7 +33,13 @@ function Login() {
       );
 
       console.log(res.data);
-      window.location.href = "/home";
+      
+      localStorage.setItem("token", res.data.token);
+
+     
+      console.log("Token saved to local storage:", res.data.token);
+     
+      //window.location.href = "/home";
     } catch (err) {
       console.error(err.response.data);
     }
